@@ -1,79 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanbas</title>
-</head>
-<body>
-    <table cellpadding="10">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <ul>
-                    <li><a href="../../Profile/profile.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="../../HomeScreen/home.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
-                    </ul>
-                </td>
-                <td valign="top">
-                    <ul>
-                    <li><a href="#">Notifications</a></li>
-                    <li><a href="../profile.html">Profile</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">ePortfolios</a></li>
-                    <li><a href="#">Shared Content</a></li>
-                    <li><a href="#">The Hub</a></li>
-                    <li><a href="#">Qwickly Course Tools</a></li>
-                    <li><a href="#">Global Announcements</a></li>
-                    </ul>
-                </td>
-                <td valign="top"><br />
-                    <form action="../profile.html">
-                        <h2>Shubh Desai</h2>
-                        <label>Name:*</label> 
-                        <input type="text" value="Shubh Desai" />
-                        <label>Pronouns:</label> 
-                        <select>
-                            <option selected value="None">None</option>
-                        </select>
-                        <h3>Contact</h3>
-                        No registered services, you can add some on the <a href = '#'>settings</a> page.
-                        <h3>Biography</h3>
-                        Faculty, Software Engineer, AI, Space, and renewable enthusiast.
-                        <br />
-                        <textarea cols="30" rows="5">
+    <link href="../../../../style.css" rel="stylesheet" />
+    <link href="../../../KanabasNavigation/index.css" rel="stylesheet" />
+    <link href="../../../../vendor/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="../index.css" rel="stylesheet" />
+    <link
+      href="../../../../vendor/bootstrap/css/bootstrap.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container pe-0 ps-0 ms-0">
+      <div class="row">
+        <div
+          class="col-1 wd-bg-black pe-0 d-none d-lg-block"
+          style="width: 97px"
+        >
+          <ul class="sidebar">
+            <li class="pt-0">
+              <a href="../../Profile/profile.html">
+                <img
+                  src="../../Images/NeuLogo.png"
+                  alt="Neu Logo"
+                  class="img-thumbnail ps-0 pe-2"
+                  style="
+                    background-color: black;
+                    border: none;
+                    height: 60px;
+                    width: 70px;
+                  "
+              /></a>
+            </li>
+            <li class="active">
+              <a href="../../Profile/profile.html">
+                <i class="fs-4 fa-solid fa-circle-user account_icon"></i>
+                Account</a
+              >
+            </li>
+            <li>
+              <a href="../../Dashboard/dashboard.html">
+                <i class="fs-4 fa-solid fa-gauge-high"></i><br />
+                Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="../../HomeScreen/home.html">
+                <i class="fs-4 fa-solid fa-book"></i><br />
+                Courses</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-calendar-days"></i><br />
+                Calendar</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-envelope-open-text"></i><br />
+                Inbox</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-regular fa-clock"></i><br />
+                History</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-network-wired"></i><br />
+                Studio</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-circle-arrow-right"></i><br />
+                Commons</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-regular fa-circle-question"></i><br />
+                Help</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="row fs-4 mt-2 ps-0 pb-0">
+            <div
+              class="col-12 d-block d-sm-none mobile-view"
+              style="margin-top: -16px"
+            >
+              <div class="row fs-4 mt-2 ps-0 pb-0 d-block d-lg-none">
+                <div
+                  class="col-12 text-center text-white bg-dark pt-4 pb-4 fs-4 align-middle"
+                >
+                  <a
+                    class="text-decoration-none text-danger"
+                    href="../onlyCourseNavigation.html"
+                  >
+                    <button
+                      type="button"
+                      class="btn text-white float-end fs-3"
+                      style="margin-top: -10px"
+                      aria-label="Close"
+                    >
+                      <i class="fa-solid fa-angle-down"></i></button
+                  ></a>
+                  <a
+                    class="text-decoration-none text-danger"
+                    href="../simpleKanabas.html"
+                  >
+                    <i
+                      class="fa-solid fa-bars float-start mt-1"
+                      style="color: #ffffff"
+                    ></i
+                  ></a>
+                  <i
+                    class="fa-solid fa-glasses float-end mt-1 me-3"
+                    style="color: #ffffff"
+                  ></i>
+                  <div><u>Shubh Desai's Profile</u></div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex mt-3 mb-3 ms-3">
+              <div class="d-none d-sm-block">
+                <i class="fa-solid fa-bars fs-2" style="color: #0c0e0e"></i>
+              </div>
+              <div class="fs-4 ps-5 d-none d-sm-block">
+                Shubh Desai's Profile
+              </div>
+            </div>
+            <hr style="margin-left: 25px" class="d-none d-lg-block" />
+          </div>
+          <div class="row">
+            <div class="col-3 ps-0 d-none d-lg-block" style="width: 200px">
+              <ul class="wd-course-navigation">
+                <li><a href="#" class="text-wrap">Notifications</a></li>
+                <li class="active">
+                  <a href="../profile.html" class="text-wrap">Profile</a>
+                </li>
+                <li><a href="#" class="text-wrap">Files</a></li>
+                <li><a href="#" class="text-wrap">Setting Meetings</a></li>
+                <li><a href="#" class="text-wrap">ePortfolios</a></li>
+                <li><a href="#" class="text-wrap">Shared Content</a></li>
+                <li><a href="#" class="text-wrap">The Hub</a></li>
+                <li><a href="#" class="text-wrap">Qwickly Course Tools</a></li>
+                <li><a href="#" class="text-wrap">Global Announcements</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <form action="../profile.html">
+                <div class="row-flex mb-1">
+                  <div>
+                    <div class="fa-stack fa-2x">
+                      <span class="fa-stack fa-2x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i
+                          class="fa fa-user fa-stack-1x fa-inverse"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
+                    </div>
+                    <button class="btn btn-secondary float-end" type="submit">
+                      <i
+                        class="fa fa-pencil"
+                        aria-hidden="true"
+                        style="transform: rotate(270deg)"
+                        ;
+                      ></i>
+                      Cancel Editing
+                    </button>
+                    <br />
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <label for="name" class="form-label fw-bold"> Name:* </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value="Shubh Desai"
+                    class="form-control w-50"
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="pronouns" class="form-label fw-bold"
+                    >Pronouns:</label
+                  ><br />
+                  <select
+                    id="pronouns"
+                    class="form-select select-pronouns w-25"
+                  >
+                    <option selected value="None">None</option>
+                  </select>
+                </div>
+                <div class="mb-5">
+                  <label for="title" class="form-label fw-bold"> Title: </label>
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    class="form-control w-50"
+                  />
+                </div>
+                <div class="mb-5">
+                  <label for="contact"><h3>Contact</h3></label>
+                  <br />
+                  No registered services, you can add some on the
+                  <a href="#" class="text-decoration-none text-danger"
+                    >settings</a
+                  >
+                  page.
+                </div>
+                <div class="mb-5">
+                  <label for="biography"><h3>Biography</h3></label>
+                  <br />
+                  <textarea
+                    id="biography"
+                    class="form-control w-50"
+                    cols="30"
+                    rows="5"
+                  >
 Faculty, Software Engineer, AI, Space, and renewable enthusiast.
-                        </textarea>
-                        <h3>Links</h3>
-                        <ul>
-                            <li><a href="#">Youtube Links to an external site.</a></li>
-                        </ul>
-                        <pre><h3>      Title              URL</h3></pre>
-                        <input type="text" value="Youtube" />
-                        ->
-                        <input type="text" value="https://www.youtube.com" />
-                        <a href = "#">Remove</a>
-                        <br />
-                        <br />
-                        <button type="button">Add another link</button>
-                        <br />
-                        <button type="button">Cancel</button>
-                        <button type="submit">Save Profile</button>
-                        <br />
-                        <button type="button">Edit Profile</button>
-                        <button type="submit">Cancel Editing</button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+                        </textarea
+                  >
+                </div>
+                <div class="mb-2">
+                  <label for="links"><h3>Links</h3></label>
+                  <br />
+                  <div class="row">
+                    <div
+                      class="col-4 form-label text-center fw-bold"
+                      style="padding-right: 30px"
+                    >
+                      Title
+                    </div>
+                    <div class="col-5 form-label text-center ps-0 fw-bold">
+                      URL
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <input type="text" class="form-control" value="Youtube" />
+                    </div>
+                    ->
+                    <div class="col-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="https://www.youtube.com"
+                      />
+                    </div>
+                    <div class="col-2">
+                      <a href="#"
+                        ><i class="fa-solid fa-xmark" style="color: #c31818"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <button class="btn btn-secondary" type="button">
+                        Add another link
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="mb-2" style="text-align: right">
+                  <button class="btn btn-secondary" type="submit">
+                    Cancel
+                  </button>
+                  <button class="btn btn-danger" type="submit">
+                    Save Profile
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

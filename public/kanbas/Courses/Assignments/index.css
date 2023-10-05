@@ -1,0 +1,27 @@
+.assignment-table .list-group-item {
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+
+.assignment-table a {
+  text-decoration: none;
+  color: black;
+}
+
+.hr-grow {
+  width: 101%;
+  margin-left: -12px;
+}
+
+.mobile-view {
+  margin-top: -16px;
+}
+
+.fa-regular.fa-eye-slash {
+  margin-right: 40px;
+}
+
+.list-group-item,
+.list-group {
+  border-radius: 0px;
+}

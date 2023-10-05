@@ -1,0 +1,11 @@
+.table {
+  width: 43%;
+}
+
+.table .text-muted i {
+  line-height: 0;
+}
+
+.mobile-view {
+  margin-top: -16px;
+}
