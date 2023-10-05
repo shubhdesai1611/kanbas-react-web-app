@@ -1,108 +1,240 @@
-<input type="text" placeholder="Search For Assignments" />
-    <button type="button">Group</button>
-    <button type="button">Assignment</button>
-    <select>
-        <option selected>Edit Assignment Dates</option>
-    </select>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../../../style.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
+    <link href="../../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../../vendor/fontawesome/css/all.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container pe-0 me-0 ps-0 ms-0">
+      <div class="row pt-3 pb-1">
+        <div class="col">
+          <input
+            type="text"
+            placeholder="Search For Assignments"
+            class="form-control w-50 ms-0"
+          />
+        </div>
+        <div class="col">
+          <button type="button" class="float-end">Group</button>
+          <button type="button" class="float-end">Assignment</button>
+          <i class="fa-solid fa-ellipsis-vertical float-end"></i>
+        </div>
+      </div>
+    </div>
     <hr />
-    <h3>ASSIGNMENTS 40% of Total
-        <select>
-            <option selected value="Edit">Edit</option>
-            <option value="Speed Grader">Speed Grader</option>
-            <option value="Duplicate">Duplicate</option>
-            <option value="Delete">Delete</option>
-            <option value="Move To...">Move To...</option>
-            <option value="Send To...">Send To...</option>
-            <option value="Copy To...">Copy To...</option>
-            <option value="Share to Commons">Share to Commons</option>
-        </select>
-    </h3>
-    <ul>
-        <li><a href = './AssignmentEditor/assignmentEditor.html'>A1 - ENV + HTML</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = './AssignmentEditor/assignmentEditor.html'>A2 - CSS + BOOTSTRAP</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = './AssignmentEditor/assignmentEditor.html'>A3 - JS + REACT</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = './AssignmentEditor/assignmentEditor.html'>A4 - STATE + REDUX</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = './AssignmentEditor/assignmentEditor.html'>A5 - NODE + SESSION</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = './AssignmentEditor/assignmentEditor.html'>A6 - MONGO + MONGOOSE</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-    </ul>
+    <div class="row">
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-secondary">
+          <h3>
+            ASSIGNMENTS
+            <div class="float-end pt-2">
+              <i
+                class="fa-solid fa-ellipsis-vertical"
+                style="color: #434447"
+              ></i>
+            </div>
+            <div class="float-end pe-5">
+              <i class="fa-solid fa-plus pt-2" style="color: #878885"></i>
+            </div>
+            <label class="weightage float-end me-2"> 40% of Total </label>
+            <!-- <select class="float-end">
+              <option selected value="Edit">Edit</option>
+              <option value="Speed Grader">Speed Grader</option>
+              <option value="Duplicate">Duplicate</option>
+              <option value="Delete">Delete</option>
+              <option value="Move To...">Move To...</option>
+              <option value="Send To...">Send To...</option>
+              <option value="Copy To...">Copy To...</option>
+              <option value="Share to Commons">Share to Commons</option>
+            </select> -->
+          </h3>
+        </li>
+        <li class="list-group-item">
+          <a href="./AssignmentEditor/assignmentEditor.html">A1 - ENV + HTML</a>
 
-    <h3>QUIZZES 10% of Total
-        <select>
-            <option selected value="Edit">Edit</option>
-            <option value="Speed Grader">Speed Grader</option>
-            <option value="Duplicate">Duplicate</option>
-            <option value="Delete">Delete</option>
-            <option value="Move To...">Move To...</option>
-            <option value="Send To...">Send To...</option>
-            <option value="Copy To...">Copy To...</option>
-            <option value="Share to Commons">Share to Commons</option>
-        </select>
-    </h3>
-    <ul>
-        <li><a href = '#'>Q1 - HTML</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = '#'>Q2 - CSS</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = '#'>Q3 - JS, ES6</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = '#'>Q4 - NODE</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-        <li><a href = '#'>Q5 - MONGO</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-    </ul>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
 
-    <h3>EXAMS 10% of Total
-        <select>
-            <option selected value="Edit">Edit</option>
-            <option value="Speed Grader">Speed Grader</option>
-            <option value="Duplicate">Duplicate</option>
-            <option value="Delete">Delete</option>
-            <option value="Move To...">Move To...</option>
-            <option value="Send To...">Send To...</option>
-            <option value="Copy To...">Copy To...</option>
-            <option value="Share to Commons">Share to Commons</option>
-        </select>
-    </h3>
-    <ul>
-        <li><a href = '#'>Midterm</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
         <br />
-        <li><a href = '#'>Final</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
-        <br />
-    </ul>
+        <li class="list-group-item">
+          <a href="./AssignmentEditor/assignmentEditor.html"
+            >A2 - CSS + BOOTSTRAP</a
+          >
 
-    <h3>PROJECT 30% of Total
-        <select>
-            <option selected value="Edit">Edit</option>
-            <option value="Speed Grader">Speed Grader</option>
-            <option value="Duplicate">Duplicate</option>
-            <option value="Delete">Delete</option>
-            <option value="Move To...">Move To...</option>
-            <option value="Send To...">Send To...</option>
-            <option value="Copy To...">Copy To...</option>
-            <option value="Share to Commons">Share to Commons</option>
-        </select>
-    </h3>
-    <ul>
-        <li><a href = '#'>Project</a></li>
-        <a href = '#'>Multiple Modules</a> | Not available yet
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+
         <br />
-    </ul>
+        <li class="list-group-item">
+          <a href="./AssignmentEditor/assignmentEditor.html">A3 - JS + REACT</a>
+
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+
+        <br />
+        <li class="list-group-item">
+          <a href="./AssignmentEditor/assignmentEditor.html"
+            >A4 - STATE + REDUX</a
+          >
+
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+
+        <br />
+        <li class="list-group-item">
+          <a href="./AssignmentEditor/assignmentEditor.html"
+            >A5 - NODE + SESSION</a
+          >
+
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+
+        <br />
+        <li class="list-group-item">
+          <a href="./AssignmentEditor/assignmentEditor.html"
+            >A6 - MONGO + MONGOOSE</a
+          >
+
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+
+        <br />
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-secondary">
+          <h3>
+            QUIZZES <label class="weightage">10% of Total</label>
+            <select>
+              <option selected value="Edit">Edit</option>
+              <option value="Speed Grader">Speed Grader</option>
+              <option value="Duplicate">Duplicate</option>
+              <option value="Delete">Delete</option>
+              <option value="Move To...">Move To...</option>
+              <option value="Send To...">Send To...</option>
+              <option value="Copy To...">Copy To...</option>
+              <option value="Share to Commons">Share to Commons</option>
+            </select>
+          </h3>
+        </li>
+        <li class="list-group-item">
+          <a href="#">Q1 - HTML</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+
+        <li class="list-group-item">
+          <a href="#">Q2 - CSS</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+
+        <li class="list-group-item">
+          <a href="#">Q3 - JS, ES6</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+
+        <li class="list-group-item">
+          <a href="#">Q4 - NODE</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+
+        <li class="list-group-item">
+          <a href="#">Q5 - MONGO</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-secondary">
+          <h3>
+            EXAMS <label class="weightage">10% of Total</label>
+            <select>
+              <option selected value="Edit">Edit</option>
+              <option value="Speed Grader">Speed Grader</option>
+              <option value="Duplicate">Duplicate</option>
+              <option value="Delete">Delete</option>
+              <option value="Move To...">Move To...</option>
+              <option value="Send To...">Send To...</option>
+              <option value="Copy To...">Copy To...</option>
+              <option value="Share to Commons">Share to Commons</option>
+            </select>
+          </h3>
+        </li>
+        <li class="list-group-item">
+          <a href="#">Midterm</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+
+        <li class="list-group-item">
+          <a href="#">Final</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+      </ul>
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-secondary">
+          <h3>
+            PROJECT <label class="weightage">30% of Total</label>
+            <select>
+              <option selected value="Edit">Edit</option>
+              <option value="Speed Grader">Speed Grader</option>
+              <option value="Duplicate">Duplicate</option>
+              <option value="Delete">Delete</option>
+              <option value="Move To...">Move To...</option>
+              <option value="Send To...">Send To...</option>
+              <option value="Copy To...">Copy To...</option>
+              <option value="Share to Commons">Share to Commons</option>
+            </select>
+          </h3>
+        </li>
+        <li class="list-group-item">
+          <a href="#">Project</a>
+          <a href="#">Multiple Modules</a>
+          | Not available yet
+        </li>
+        <br />
+      </ul>
+    </div>
+    <!-- <div class="wd-flex-row-container">
+      <div>
+        <input
+          type="text"
+          placeholder="Search For Assignments"
+          class="form-control w-25"
+        />
+      </div>
+      <div>
+        <button type="button" class="float-end">Group</button>
+        <button type="button" class="float-end">Assignment</button>
+        <i class="fa-solid fa-ellipsis-vertical float-end"></i> -->
+    <!-- <select>
+        <option selected></option>
+    </select> 
+      </div>
+    </div>-->
+  </body>
+</html>

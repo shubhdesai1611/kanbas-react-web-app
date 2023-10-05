@@ -1,0 +1,11 @@
+.mobile-view {
+  margin-top: -16px;
+}
+
+.fixed-width-table input[type="number"] {
+  width: 65px !important;
+}
+
+.fa-regular.fa-eye-slash {
+  margin-right: 40px;
+}

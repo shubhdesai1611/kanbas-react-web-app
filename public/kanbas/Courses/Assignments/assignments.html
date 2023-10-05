@@ -1,162 +1,1111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanbas</title>
-</head>
-<body>
-    <table cellpadding="10">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <ul>
-                    <li><a href="../Profile/profile.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="../HomeScreen/home.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
-                    </ul>
-                </td>
-                <td valign="top">
-                    <ul>
-                    <li><a href="../HomeScreen/home.html">Home</a></li>
-                    <li><a href="#">Module</a></li>
-                    <li><a href="#">Piazza</a></li>
-                    <li><a href="#">Zoom Meetings</a></li>
-                    <li><a href="../Assignments/assignments.html">Assignments</a></li>
-                    <li><a href="#">Quizzes</a></li>
-                    <li><a href="../Grades/grades.html">Grades</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Panopto Video</a></li>
-                    <li><a href="#">Discussions</a></li>
-                    <li><a href="#">Announcements</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Rubrics</a></li>
-                    <li><a href="#">Outcomes</a></li>
-                    <li><a href="#">Collaborations</a></li>
-                    <li><a href="#">Syllabus</a></li>
-                    <li><a href="../Settings/courseDetails.html">Settings</a></li>
-                    </ul>
-                </td>
-                <td valign="top"><br />
-                    <input type="text" placeholder="Search For Assignments" />
-                    <button type="button">Group</button>
-                    <button type="button">Assignment</button>
-                    <select>
-                        <option selected>Edit Assignment Dates</option>
-                    </select>
-                    <hr />
-                    <h3>ASSIGNMENTS 40% of Total
-                        <select>
-                            <option selected value="Edit">Edit</option>
-                            <option value="Speed Grader">Speed Grader</option>
-                            <option value="Duplicate">Duplicate</option>
-                            <option value="Delete">Delete</option>
-                            <option value="Move To...">Move To...</option>
-                            <option value="Send To...">Send To...</option>
-                            <option value="Copy To...">Copy To...</option>
-                            <option value="Share to Commons">Share to Commons</option>
-                        </select>
-                    </h3>
-                    <ul>
-                        <li><a href = './AssignmentEditor/assignmentEditor.html'>A1 - ENV + HTML</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = './AssignmentEditor/assignmentEditor.html'>A2 - CSS + BOOTSTRAP</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = './AssignmentEditor/assignmentEditor.html'>A3 - JS + REACT</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = './AssignmentEditor/assignmentEditor.html'>A4 - STATE + REDUX</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = './AssignmentEditor/assignmentEditor.html'>A5 - NODE + SESSION</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = './AssignmentEditor/assignmentEditor.html'>A6 - MONGO + MONGOOSE</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                    </ul>
+    <link href="../../../style.css" rel="stylesheet" />
+    <link href="../../KanabasNavigation/index.css" rel="stylesheet" />
+    <link href="../../../vendor/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="../CourseNavigation/index.css" rel="stylesheet" />
+    <link href="../../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
+    <script
+      type="text/javascript"
+      src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container ms-0 ps-0 me-0 pe-0">
+      <div class="row">
+        <div
+          class="col-1 wd-bg-black pe-0 d-none d-lg-block"
+          style="width: 97px"
+        >
+          <ul class="sidebar">
+            <li class="pt-0">
+              <a href="../Profile/profile.html">
+                <img
+                  src="../Images/NeuLogo.png"
+                  alt="Neu Logo"
+                  class="img-thumbnail ps-0 pe-2"
+                  style="
+                    background-color: black;
+                    border: none;
+                    height: 60px;
+                    width: 70px;
+                  "
+              /></a>
+            </li>
+            <li>
+              <a href="../Profile/profile.html">
+                <i class="fs-4 fa-solid fa-circle-user account_icon"></i>
+                Account</a
+              >
+            </li>
+            <li>
+              <a href="../Dashboard/dashboard.html">
+                <i class="fs-4 fa-solid fa-gauge-high"></i><br />
+                Dashboard</a
+              >
+            </li>
+            <li class="active">
+              <a href="../HomeScreen/home.html">
+                <i class="fs-4 fa-solid fa-book"></i><br />
+                Courses</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-calendar-days"></i><br />
+                Calendar</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-envelope-open-text"></i><br />
+                Inbox</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-regular fa-clock"></i><br />
+                History</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-network-wired"></i><br />
+                Studio</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-solid fa-circle-arrow-right"></i><br />
+                Commons</a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i class="fs-4 fa-regular fa-circle-question"></i><br />
+                Help</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="row fs-4 mt-2 ps-0 pb-0">
+            <div class="col-12 d-block d-sm-none mobile-view">
+              <div class="row fs-4 mt-2 ps-0 pb-0 d-block d-lg-none">
+                <div
+                  class="col-12 text-center text-white bg-dark pt-4 pb-4 fs-4 align-middle"
+                >
+                  <a
+                    class="text-decoration-none text-danger"
+                    href="./onlyCourseNavigation.html"
+                  >
+                    <button
+                      type="button"
+                      class="btn text-white float-end fs-3"
+                      style="margin-top: -10px"
+                      aria-label="Close"
+                    >
+                      <i class="fa-solid fa-angle-down"></i></button
+                  ></a>
+                  <a
+                    class="text-decoration-none text-danger"
+                    href="./simpleKanabas.html"
+                  >
+                    <i
+                      class="fa-solid fa-bars float-start mt-1"
+                      style="color: #ffffff"
+                    ></i
+                  ></a>
+                  <i
+                    class="fa-solid fa-glasses float-end mt-1 me-3"
+                    style="color: #ffffff"
+                  ></i>
+                  <div><u>CS 5610.12631.202410 Modules</u></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-10 d-none d-sm-block">
+              <nav
+                style="--bs-breadcrumb-divider: '>'; padding-left: 25px"
+                aria-label="breadcrumb"
+              >
+                <ol class="breadcrumb mb-0">
+                  <li class="me-4">
+                    <a href="#">
+                      <i class="fa-solid fa-bars" style="color: #000000"></i
+                    ></a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a class="text-decoration-none text-danger" href="#"
+                      >CS5610 Web Development</a
+                    >
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Assignments
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-2 d-none d-sm-block">
+              <button class="btn btn-secondary float-end">
+                <i class="fa-solid fa-glasses" style="color: #ffffff"></i>
+                Student View
+              </button>
+            </div>
+          </div>
+          <hr style="margin-left: 25px" />
+          <div class="row">
+            <div
+              class="col-2 d-none d-lg-block"
+              style="padding-left: 25px; margin-right: 40px"
+            >
+              <ul class="wd-course-navigation">
+                <li><a href="../HomeScreen/home.html">Home</a></li>
+                <li><a href="#">Module</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li class="active">
+                  <a href="./assignments.html">Assignments</a>
+                </li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="../Grades/grades.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li>
+                  <a href="#">Discussions</a>
+                </li>
+                <li>
+                  <a href="#">Announcements</a>
+                </li>
+                <li>
+                  <a href="#">Pages</a>
+                </li>
+                <li>
+                  <a href="#">Files</a>
+                </li>
+                <li>
+                  <a href="#">Rubrics</a>
+                </li>
+                <li>
+                  <a href="#">Outcomes</a>
+                </li>
+                <li>
+                  <a href="#">Collaborations</a>
+                </li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="../Settings/courseDetails.html">Settings</a></li>
+              </ul>
+            </div>
 
-                    <h3>QUIZZES 10% of Total
-                        <select>
-                            <option selected value="Edit">Edit</option>
-                            <option value="Speed Grader">Speed Grader</option>
-                            <option value="Duplicate">Duplicate</option>
-                            <option value="Delete">Delete</option>
-                            <option value="Move To...">Move To...</option>
-                            <option value="Send To...">Send To...</option>
-                            <option value="Copy To...">Copy To...</option>
-                            <option value="Share to Commons">Share to Commons</option>
-                        </select>
-                    </h3>
-                    <ul>
-                        <li><a href = '#'>Q1 - HTML</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = '#'>Q2 - CSS</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = '#'>Q3 - JS, ES6</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = '#'>Q4 - NODE</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = '#'>Q5 - MONGO</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                    </ul>
+            <div class="col">
+              <div class="row">
+                <div class="col-12">
+                  <input
+                    type="text"
+                    placeholder="Search For Assignments"
+                    class="form-control w-25 ms-0 float-start"
+                  />
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary float-end ms-1"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a
+                        class="dropdown-item"
+                        href="./AssignmentEditor/assignmentEditor.html"
+                      >
+                        <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                        Edit Assignment Dates</a
+                      >
+                      <a class="dropdown-item" href="#">
+                        <i class="fa-solid fa-check"></i>
+                        Assignment Groups Weight</a
+                      >
+                      <a class="dropdown-item" href="#">
+                        <i class="fa-solid fa-file-import"></i>
+                        Gradescope 1.3</a
+                      >
+                      <a class="dropdown-item" href="#">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Commons Favourites 1.3</a
+                      >
+                    </div>
+                    <button type="button" class="btn btn-danger float-end ms-1">
+                      <i class="fa-solid fa-plus"></i>
+                      Assignment
+                    </button>
+                    <button type="button" class="float-end btn btn-secondary">
+                      <i class="fa-solid fa-plus" style="color: #ffffff"></i>
+                      Group
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <hr class="hr-grow mt-2" />
+                </div>
+              </div>
+              <div class="row">
+                <ul class="list-group">
+                  <div class="col-12">
+                    <li class="list-group-item list-group-item-secondary">
+                      <h4>
+                        <div class="float-start me-4 ms-2">
+                          <i class="fa-solid fa-grip-vertical pt-2 fs-5"></i>
+                        </div>
+                        <span>ASSIGNMENTS</span>
+                        <div class="float-end pt-2 dropdown">
+                          <i
+                            class="fa-solid fa-ellipsis-vertical"
+                            data-bs-toggle="dropdown"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            id="dropdownMenuButton1"
+                            style="color: #434447"
+                          ></i>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton"
+                          >
+                            <a
+                              class="dropdown-item"
+                              href="./AssignmentEditor/assignmentEditor.html"
+                            >
+                              <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                              Edit Assignment Dates</a
+                            >
+                            <a class="dropdown-item" href="#">
+                              <i class="fa-solid fa-check"></i>
+                              Assignment Groups Weight</a
+                            >
+                            <a class="dropdown-item" href="#">
+                              <i class="fa-solid fa-file-import"></i>
+                              Gradescope 1.3</a
+                            >
+                            <a class="dropdown-item" href="#">
+                              <i class="fa-solid fa-right-from-bracket"></i>
+                              Commons Favourites 1.3</a
+                            >
+                          </div>
+                        </div>
+                        <div class="float-end me-4 ms-2">
+                          <i
+                            class="fa-solid fa-plus pt-2"
+                            style="color: #878885"
+                          ></i>
+                        </div>
+                        <label
+                          class="border border-dark rounded-pill float-end p-1"
+                        >
+                          40% of Total
+                        </label>
+                      </h4>
+                    </li>
+                  </div>
+                  <div
+                    class="col-12 border-start border-3 border-success assignment-table"
+                  >
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 4%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 4%"
+                      ></i>
 
-                    <h3>EXAMS 20% of Total
-                        <select>
-                            <option selected value="Edit">Edit</option>
-                            <option value="Speed Grader">Speed Grader</option>
-                            <option value="Duplicate">Duplicate</option>
-                            <option value="Delete">Delete</option>
-                            <option value="Move To...">Move To...</option>
-                            <option value="Send To...">Send To...</option>
-                            <option value="Copy To...">Copy To...</option>
-                            <option value="Share to Commons">Share to Commons</option>
-                        </select>
-                    </h3>
-                    <ul>
-                        <li><a href = '#'>Midterm</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                        <li><a href = '#'>Final</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                    </ul>
+                      <div
+                        class="float-end pt-2 dropdown"
+                        style="margin-top: 3%"
+                      >
+                        <i
+                          class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                          data-bs-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dropdownMenuButton1"
+                        ></i>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="./AssignmentEditor/assignmentEditor.html"
+                          >
+                            <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                            Edit</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Speed Grader</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-copy"></i>
+                            Duplicate</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-arrows-up-down"></i>
+                            Move To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-user"></i>
+                            Send To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            Share to Commons</a
+                          >
+                        </div>
+                      </div>
 
-                    <h3>PROJECT 30% of Total
-                        <select>
-                            <option selected value="Edit">Edit</option>
-                            <option value="Speed Grader">Speed Grader</option>
-                            <option value="Duplicate">Duplicate</option>
-                            <option value="Delete">Delete</option>
-                            <option value="Move To...">Move To...</option>
-                            <option value="Send To...">Send To...</option>
-                            <option value="Copy To...">Copy To...</option>
-                            <option value="Share to Commons">Share to Commons</option>
-                        </select>
-                    </h3>
-                    <ul>
-                        <li><a href = '#'>Project</a></li>
-                        <a href = '#'>Multiple Modules</a> | Not available yet
-                        <br />
-                    </ul>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 4%"
+                      ></i>
+                      <a
+                        href="./AssignmentEditor/assignmentEditor.html"
+                        class="fs-5"
+                        >A1 - ENV + HTML</a
+                      >
 
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+                      <br />
+
+                      <p>
+                        Week 1 HTML - Week Starting on Monday September 5th
+                        (9/5/2022) Module | <br />
+                        Due Sep 18th 2022 at 11.59pm | 100 pts
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 4%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 4%"
+                      ></i>
+                      <div
+                        class="float-end pt-2 dropdown"
+                        style="margin-top: 3%"
+                      >
+                        <i
+                          class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                          data-bs-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dropdownMenuButton1"
+                        ></i>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="./AssignmentEditor/assignmentEditor.html"
+                          >
+                            <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                            Edit</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Speed Grader</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-copy"></i>
+                            Duplicate</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-arrows-up-down"></i>
+                            Move To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-user"></i>
+                            Send To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            Share to Commons</a
+                          >
+                        </div>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 4%"
+                      ></i>
+                      <a
+                        href="./AssignmentEditor/assignmentEditor.html"
+                        class="fs-5"
+                        >A2 - CSS + BOOTSTRAP</a
+                      >
+                      <br />
+                      <p>
+                        Week 2 CSS - Week Starting on Monday September 19th
+                        (9/19/2022) Module | <br />
+                        Due Oct 2, 2022 at 11.59pm | 100 pts
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 4%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 4%"
+                      ></i>
+                      <div
+                        class="float-end pt-2 dropdown"
+                        style="margin-top: 3%"
+                      >
+                        <i
+                          class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                          data-bs-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dropdownMenuButton1"
+                        ></i>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="./AssignmentEditor/assignmentEditor.html"
+                          >
+                            <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                            Edit</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Speed Grader</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-copy"></i>
+                            Duplicate</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-arrows-up-down"></i>
+                            Move To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-user"></i>
+                            Send To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            Share to Commons</a
+                          >
+                        </div>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 4%"
+                      ></i>
+                      <a
+                        href="./AssignmentEditor/assignmentEditor.html"
+                        class="fs-5"
+                        >A3 - JS + REACT</a
+                      >
+                      <br />
+                      <p>
+                        Week 3 Bootstrap - Week Starting on Monday September
+                        26th (9/26/2022) Module | <br />
+                        Due Oct 10, 2022 at 11.59pm | 100 pts
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 4%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 4%"
+                      ></i>
+                      <div
+                        class="float-end pt-2 dropdown"
+                        style="margin-top: 3%"
+                      >
+                        <i
+                          class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                          data-bs-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dropdownMenuButton1"
+                        ></i>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="./AssignmentEditor/assignmentEditor.html"
+                          >
+                            <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                            Edit</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Speed Grader</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-copy"></i>
+                            Duplicate</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-arrows-up-down"></i>
+                            Move To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-user"></i>
+                            Send To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            Share to Commons</a
+                          >
+                        </div>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 4%"
+                      ></i>
+                      <a
+                        href="./AssignmentEditor/assignmentEditor.html"
+                        class="fs-5"
+                        >A4 - STATE + REDUX</a
+                      >
+                      <br />
+                      <p>
+                        Week 4 Javascript - Week Starting on Monday October 3rd
+                        (10/03/2022) Module | <br />
+                        Due Oct 16, 2022 at 11.59pm | 100 pts
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 4%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 4%"
+                      ></i>
+                      <div
+                        class="float-end pt-2 dropdown"
+                        style="margin-top: 3%"
+                      >
+                        <i
+                          class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                          data-bs-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dropdownMenuButton1"
+                        ></i>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="./AssignmentEditor/assignmentEditor.html"
+                          >
+                            <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                            Edit</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Speed Grader</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-copy"></i>
+                            Duplicate</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-arrows-up-down"></i>
+                            Move To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-user"></i>
+                            Send To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            Share to Commons</a
+                          >
+                        </div>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 4%"
+                      ></i>
+                      <a
+                        href="./AssignmentEditor/assignmentEditor.html"
+                        class="fs-5"
+                        >A5 - NODE + SESSION</a
+                      >
+                      <br />
+                      <p>
+                        Week 5 React - Week Starting on October 10th
+                        (10/10/2022) Module | <br />
+                        Due Oct 23, 2022 at 11.59pm | 100 pts
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 4%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 4%"
+                      ></i>
+                      <div
+                        class="float-end pt-2 dropdown"
+                        style="margin-top: 3%"
+                      >
+                        <i
+                          class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                          data-bs-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          id="dropdownMenuButton1"
+                        ></i>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="./AssignmentEditor/assignmentEditor.html"
+                          >
+                            <i class="fa-solid fa-pencil fa-rotate-270"></i>
+                            Edit</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Speed Grader</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-copy"></i>
+                            Duplicate</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-arrows-up-down"></i>
+                            Move To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-regular fa-user"></i>
+                            Send To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy To</a
+                          >
+                          <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            Share to Commons</a
+                          >
+                        </div>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 4%"
+                      ></i>
+                      <a
+                        href="./AssignmentEditor/assignmentEditor.html"
+                        class="fs-5"
+                        >A6 - MONGO + MONGOOSE</a
+                      >
+                      <br />
+                      <p>
+                        Week 6 Mongo - Week Starting on October 17th
+                        (10/17/2022) Module | <br />
+                        Due Oct 30, 2022 at 11.59pm | 100 pts
+                      </p>
+                    </li>
+                  </div>
+                </ul>
+
+                <ul class="list-group mt-5">
+                  <li class="list-group-item list-group-item-secondary">
+                    <h3>
+                      <div class="float-start me-4 ms-2">
+                        <i class="fa-solid fa-grip-vertical pt-2 fs-5"></i>
+                      </div>
+                      QUIZZES
+                      <div class="float-end pt-2">
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #434447"
+                        ></i>
+                      </div>
+                      <div class="float-end me-4 ms-2">
+                        <i
+                          class="fa-solid fa-plus pt-2"
+                          style="color: #878885"
+                        ></i>
+                      </div>
+                      <label
+                        class="border border-dark rounded-pill float-end p-1"
+                        >10% of Total</label
+                      >
+                    </h3>
+                  </li>
+                  <div
+                    class="col-12 border-start border-3 border-success assignment-table"
+                  >
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Q1 - HTML</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Q2 - CSS</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Q3 - JS, ES6</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Q4 - NODE</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Q5 - MONGO</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+                  </div>
+                </ul>
+
+                <ul class="list-group mt-5">
+                  <li class="list-group-item list-group-item-secondary">
+                    <h3>
+                      <div class="float-start me-4 ms-2">
+                        <i class="fa-solid fa-grip-vertical pt-2 fs-5"></i>
+                      </div>
+                      <div class="float-end pt-2">
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #434447"
+                        ></i>
+                      </div>
+                      <div class="float-end me-4 ms-2">
+                        <i
+                          class="fa-solid fa-plus pt-2"
+                          style="color: #878885"
+                        ></i>
+                      </div>
+                      EXAMS
+                      <label
+                        class="border border-dark rounded-pill float-end p-1"
+                        >10% of Total</label
+                      >
+                      <!-- <select>
+                        <option selected value="Edit">Edit</option>
+                        <option value="Speed Grader">Speed Grader</option>
+                        <option value="Duplicate">Duplicate</option>
+                        <option value="Delete">Delete</option>
+                        <option value="Move To...">Move To...</option>
+                        <option value="Send To...">Send To...</option>
+                        <option value="Copy To...">Copy To...</option>
+                        <option value="Share to Commons">
+                          Share to Commons
+                        </option>
+                      </select> -->
+                    </h3>
+                  </li>
+                  <div
+                    class="col-12 border-start border-3 border-success assignment-table"
+                  >
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Midterm</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Final</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+                  </div>
+                </ul>
+
+                <ul class="list-group mt-5">
+                  <li class="list-group-item list-group-item-secondary">
+                    <h3>
+                      <div class="float-start me-4 ms-2">
+                        <i class="fa-solid fa-grip-vertical pt-2 fs-5"></i>
+                      </div>
+                      <div class="float-end pt-2">
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #434447"
+                        ></i>
+                      </div>
+                      <div class="float-end me-4 ms-2">
+                        <i
+                          class="fa-solid fa-plus pt-2"
+                          style="color: #878885"
+                        ></i>
+                      </div>
+                      PROJECT
+                      <label
+                        class="border border-dark rounded-pill float-end p-1"
+                        >30% of Total</label
+                      >
+                      <!-- <select>
+                        <option selected value="Edit">Edit</option>
+                        <option value="Speed Grader">Speed Grader</option>
+                        <option value="Duplicate">Duplicate</option>
+                        <option value="Delete">Delete</option>
+                        <option value="Move To...">Move To...</option>
+                        <option value="Send To...">Send To...</option>
+                        <option value="Copy To...">Copy To...</option>
+                        <option value="Share to Commons">
+                          Share to Commons
+                        </option>
+                      </select> -->
+                    </h3>
+                  </li>
+                  <div
+                    class="col-12 border-start border-3 border-success assignment-table"
+                  >
+                    <li class="list-group-item">
+                      <i
+                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
+                        style="color: #a0880d; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical float-end fs-5"
+                        style="color: #050505; margin-top: 2%"
+                      ></i>
+                      <i
+                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        style="margin-top: 2%"
+                      ></i>
+                      <a href="#" class="fs-5">Project</a><br />
+                      <a href="#">Multiple Modules</a>
+                      | Not available yet
+                    </li>
+                  </div>
+                </ul>
+              </div>
+              <!-- <div class="wd-flex-row-container">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Search For Assignments"
+                  class="form-control w-25"
+                />
+              </div>
+              <div>
+                <button type="button" class="float-end">Group</button>
+                <button type="button" class="float-end">Assignment</button>
+                <i class="fa-solid fa-ellipsis-vertical float-end"></i> -->
+              <!-- <select>
+                <option selected></option>
+            </select> 
+              </div>
+            </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
