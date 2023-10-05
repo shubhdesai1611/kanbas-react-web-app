@@ -95,7 +95,7 @@
         </div>
         <div class="col">
           <div class="row fs-4 mt-2 ps-0 pb-0">
-            <div class="col-12 d-block d-sm-none mobile-view">
+            <div class="col-12 d-block d-lg-none mobile-view mb-5">
               <div class="row fs-4 mt-2 ps-0 pb-0 d-block d-lg-none">
                 <div
                   class="col-12 text-center text-white bg-dark pt-4 pb-4 fs-4 align-middle"
@@ -129,7 +129,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-10 d-none d-sm-block">
+            <div class="col-10 d-none d-lg-block">
               <nav
                 style="--bs-breadcrumb-divider: '>'; padding-left: 25px"
                 aria-label="breadcrumb"
@@ -151,54 +151,60 @@
                 </ol>
               </nav>
             </div>
-            <div class="col-2 d-none d-sm-block">
+            <div class="col-2 d-none d-lg-block">
               <button class="btn btn-secondary float-end">
                 <i class="fa-solid fa-glasses" style="color: #ffffff"></i>
                 Student View
               </button>
             </div>
           </div>
-          <hr style="margin-left: 25px" />
+          <hr class="d-none d-lg-block" style="margin-left: 25px" />
           <div class="row">
             <div
               class="col-2 d-none d-lg-block"
               style="padding-left: 25px; margin-right: 40px"
             >
               <ul class="wd-course-navigation">
-                <li><a href="../HomeScreen/home.html">Home</a></li>
-                <li><a href="#">Module</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom Meetings</a></li>
-                <li class="active">
+                <li class="text-wrap">
+                  <a href="../HomeScreen/home.html">Home</a>
+                </li>
+                <li class="text-wrap"><a href="#">Module</a></li>
+                <li class="text-wrap"><a href="#">Piazza</a></li>
+                <li class="text-wrap"><a href="#">Zoom Meetings</a></li>
+                <li class="active text-wrap">
                   <a href="./assignments.html">Assignments</a>
                 </li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="../Grades/grades.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto Video</a></li>
-                <li>
+                <li class="text-wrap"><a href="#">Quizzes</a></li>
+                <li class="text-wrap">
+                  <a href="../Grades/grades.html">Grades</a>
+                </li>
+                <li class="text-wrap"><a href="#">People</a></li>
+                <li class="text-wrap"><a href="#">Panopto Video</a></li>
+                <li class="text-wrap">
                   <a href="#">Discussions</a>
                 </li>
-                <li>
+                <li class="text-wrap">
                   <a href="#">Announcements</a>
                 </li>
-                <li>
+                <li class="text-wrap">
                   <a href="#">Pages</a>
                 </li>
-                <li>
+                <li class="text-wrap">
                   <a href="#">Files</a>
                 </li>
-                <li>
+                <li class="text-wrap">
                   <a href="#">Rubrics</a>
                 </li>
-                <li>
+                <li class="text-wrap">
                   <a href="#">Outcomes</a>
                 </li>
-                <li>
+                <li class="text-wrap">
                   <a href="#">Collaborations</a>
                 </li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="../Settings/courseDetails.html">Settings</a></li>
+                <li class="text-wrap"><a href="#">Syllabus</a></li>
+                <li class="text-wrap">
+                  <a href="../Settings/courseDetails.html">Settings</a>
+                </li>
               </ul>
             </div>
 
@@ -321,18 +327,23 @@
                     class="col-12 border-start border-3 border-success assignment-table"
                   >
                     <li class="list-group-item">
-                      <i
-                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
-                        style="color: #050505; margin-top: 4%"
-                      ></i>
-                      <i
-                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
-                        style="color: #a0880d; margin-top: 4%"
-                      ></i>
-
                       <div
-                        class="float-end pt-2 dropdown"
-                        style="margin-top: 3%"
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i class="fa-solid fa-grip-vertical fs-5"></i>
+                      </div>
+                      <div
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i
+                          class="fa-regular fa-pen-to-square text-success fs-5"
+                        ></i>
+                      </div>
+                      <div
+                        class="col-1 float-end dropdown d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
                         <i
                           class="fa-solid fa-ellipsis-vertical float-end fs-5"
@@ -384,36 +395,49 @@
                         </div>
                       </div>
 
-                      <i
-                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
-                        style="margin-top: 4%"
-                      ></i>
-                      <a
-                        href="./AssignmentEditor/assignmentEditor.html"
-                        class="fs-5"
-                        >A1 - ENV + HTML</a
+                      <div
+                        class="col-1 float-end me-1 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
+                        <i
+                          class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        ></i>
+                      </div>
 
-                      <br />
+                      <div class="col-10 mx-auto">
+                        <a
+                          href="./AssignmentEditor/assignmentEditor.html"
+                          class="fs-5"
+                          >A1 SETUP</a
+                        >
 
-                      <p>
-                        Week 1 HTML - Week Starting on Monday September 5th
-                        (9/5/2022) Module | <br />
-                        Due Sep 18th 2022 at 11.59pm | 100 pts
-                      </p>
+                        <br />
+
+                        <p class="text-muted">
+                          Week 0 SETUP - Week Starting on Monday September 05th
+                          (09/05/2022) Module | Due Sep 19, 2022 at 11.59pm |
+                          100 pts
+                        </p>
+                      </div>
                     </li>
                     <li class="list-group-item">
-                      <i
-                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
-                        style="color: #050505; margin-top: 4%"
-                      ></i>
-                      <i
-                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
-                        style="color: #a0880d; margin-top: 4%"
-                      ></i>
                       <div
-                        class="float-end pt-2 dropdown"
-                        style="margin-top: 3%"
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i class="fa-solid fa-grip-vertical fs-5"></i>
+                      </div>
+                      <div
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i
+                          class="fa-regular fa-pen-to-square text-success fs-5"
+                        ></i>
+                      </div>
+                      <div
+                        class="col-1 float-end dropdown d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
                         <i
                           class="fa-solid fa-ellipsis-vertical float-end fs-5"
@@ -464,34 +488,50 @@
                           >
                         </div>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
-                        style="margin-top: 4%"
-                      ></i>
-                      <a
-                        href="./AssignmentEditor/assignmentEditor.html"
-                        class="fs-5"
-                        >A2 - CSS + BOOTSTRAP</a
+
+                      <div
+                        class="col-1 float-end me-1 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
-                      <br />
-                      <p>
-                        Week 2 CSS - Week Starting on Monday September 19th
-                        (9/19/2022) Module | <br />
-                        Due Oct 2, 2022 at 11.59pm | 100 pts
-                      </p>
+                        <i
+                          class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        ></i>
+                      </div>
+
+                      <div class="col-10 mx-auto">
+                        <a
+                          href="./AssignmentEditor/assignmentEditor.html"
+                          class="fs-5"
+                          >A2 HTML</a
+                        >
+
+                        <br />
+
+                        <p class="text-muted">
+                          Week 1 HTML - Week Starting on Monday September 12th
+                          (09/12/2022) Module | Due Sep 25, 2022 at 11.59pm |
+                          100 pts
+                        </p>
+                      </div>
                     </li>
                     <li class="list-group-item">
-                      <i
-                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
-                        style="color: #050505; margin-top: 4%"
-                      ></i>
-                      <i
-                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
-                        style="color: #a0880d; margin-top: 4%"
-                      ></i>
                       <div
-                        class="float-end pt-2 dropdown"
-                        style="margin-top: 3%"
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i class="fa-solid fa-grip-vertical fs-5"></i>
+                      </div>
+                      <div
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i
+                          class="fa-regular fa-pen-to-square text-success fs-5"
+                        ></i>
+                      </div>
+                      <div
+                        class="col-1 float-end dropdown d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
                         <i
                           class="fa-solid fa-ellipsis-vertical float-end fs-5"
@@ -542,34 +582,50 @@
                           >
                         </div>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
-                        style="margin-top: 4%"
-                      ></i>
-                      <a
-                        href="./AssignmentEditor/assignmentEditor.html"
-                        class="fs-5"
-                        >A3 - JS + REACT</a
+
+                      <div
+                        class="col-1 float-end me-1 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
-                      <br />
-                      <p>
-                        Week 3 Bootstrap - Week Starting on Monday September
-                        26th (9/26/2022) Module | <br />
-                        Due Oct 10, 2022 at 11.59pm | 100 pts
-                      </p>
+                        <i
+                          class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        ></i>
+                      </div>
+
+                      <div class="col-10 mx-auto">
+                        <a
+                          href="./AssignmentEditor/assignmentEditor.html"
+                          class="fs-5"
+                          >A3 CSS</a
+                        >
+
+                        <br />
+
+                        <p class="text-muted">
+                          Week 2 CSS - Week Starting on Monday September 19th
+                          (09/19/2022) Module | Due Oct 2, 2022 at 11.59pm | 100
+                          pts
+                        </p>
+                      </div>
                     </li>
                     <li class="list-group-item">
-                      <i
-                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
-                        style="color: #050505; margin-top: 4%"
-                      ></i>
-                      <i
-                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
-                        style="color: #a0880d; margin-top: 4%"
-                      ></i>
                       <div
-                        class="float-end pt-2 dropdown"
-                        style="margin-top: 3%"
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i class="fa-solid fa-grip-vertical fs-5"></i>
+                      </div>
+                      <div
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i
+                          class="fa-regular fa-pen-to-square text-success fs-5"
+                        ></i>
+                      </div>
+                      <div
+                        class="col-1 float-end dropdown d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
                         <i
                           class="fa-solid fa-ellipsis-vertical float-end fs-5"
@@ -620,34 +676,50 @@
                           >
                         </div>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
-                        style="margin-top: 4%"
-                      ></i>
-                      <a
-                        href="./AssignmentEditor/assignmentEditor.html"
-                        class="fs-5"
-                        >A4 - STATE + REDUX</a
+
+                      <div
+                        class="col-1 float-end me-1 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
-                      <br />
-                      <p>
-                        Week 4 Javascript - Week Starting on Monday October 3rd
-                        (10/03/2022) Module | <br />
-                        Due Oct 16, 2022 at 11.59pm | 100 pts
-                      </p>
+                        <i
+                          class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        ></i>
+                      </div>
+
+                      <div class="col-10 mx-auto">
+                        <a
+                          href="./AssignmentEditor/assignmentEditor.html"
+                          class="fs-5"
+                          >A4 BOOTSTRAP</a
+                        >
+
+                        <br />
+
+                        <p class="text-muted">
+                          Week 3 Bootstrap - Week Starting on Monday September
+                          26th (09/26/2022) Module | Due Oct 10, 2022 at 11.59pm
+                          | 100 pts
+                        </p>
+                      </div>
                     </li>
                     <li class="list-group-item">
-                      <i
-                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
-                        style="color: #050505; margin-top: 4%"
-                      ></i>
-                      <i
-                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
-                        style="color: #a0880d; margin-top: 4%"
-                      ></i>
                       <div
-                        class="float-end pt-2 dropdown"
-                        style="margin-top: 3%"
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i class="fa-solid fa-grip-vertical fs-5"></i>
+                      </div>
+                      <div
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i
+                          class="fa-regular fa-pen-to-square text-success fs-5"
+                        ></i>
+                      </div>
+                      <div
+                        class="col-1 float-end dropdown d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
                         <i
                           class="fa-solid fa-ellipsis-vertical float-end fs-5"
@@ -698,34 +770,50 @@
                           >
                         </div>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
-                        style="margin-top: 4%"
-                      ></i>
-                      <a
-                        href="./AssignmentEditor/assignmentEditor.html"
-                        class="fs-5"
-                        >A5 - NODE + SESSION</a
+
+                      <div
+                        class="col-1 float-end me-1 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
-                      <br />
-                      <p>
-                        Week 5 React - Week Starting on October 10th
-                        (10/10/2022) Module | <br />
-                        Due Oct 23, 2022 at 11.59pm | 100 pts
-                      </p>
+                        <i
+                          class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        ></i>
+                      </div>
+
+                      <div class="col-10 mx-auto">
+                        <a
+                          href="./AssignmentEditor/assignmentEditor.html"
+                          class="fs-5"
+                          >A5 JAVASCRIPT</a
+                        >
+
+                        <br />
+
+                        <p class="text-muted">
+                          Week 4 Javascript - Week Starting on Monday October
+                          3rd (10/03/2022) Module | Due Oct 16, 2022 at 11.59pm
+                          | 100 pts
+                        </p>
+                      </div>
                     </li>
                     <li class="list-group-item">
-                      <i
-                        class="fa-solid fa-grip-vertical float-start me-3 fs-5"
-                        style="color: #050505; margin-top: 4%"
-                      ></i>
-                      <i
-                        class="fa-regular fa-pen-to-square float-start me-3 fs-5"
-                        style="color: #a0880d; margin-top: 4%"
-                      ></i>
                       <div
-                        class="float-end pt-2 dropdown"
-                        style="margin-top: 3%"
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i class="fa-solid fa-grip-vertical fs-5"></i>
+                      </div>
+                      <div
+                        class="col-1 float-start me-3 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
+                      >
+                        <i
+                          class="fa-regular fa-pen-to-square text-success fs-5"
+                        ></i>
+                      </div>
+                      <div
+                        class="col-1 float-end dropdown d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
                         <i
                           class="fa-solid fa-ellipsis-vertical float-end fs-5"
@@ -776,21 +864,31 @@
                           >
                         </div>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
-                        style="margin-top: 4%"
-                      ></i>
-                      <a
-                        href="./AssignmentEditor/assignmentEditor.html"
-                        class="fs-5"
-                        >A6 - MONGO + MONGOOSE</a
+
+                      <div
+                        class="col-1 float-end me-1 d-flex align-items-center"
+                        style="width: fit-content; height: 85px"
                       >
-                      <br />
-                      <p>
-                        Week 6 Mongo - Week Starting on October 17th
-                        (10/17/2022) Module | <br />
-                        Due Oct 30, 2022 at 11.59pm | 100 pts
-                      </p>
+                        <i
+                          class="fa-solid fa-circle-check float-end me-3 fs-5 text-success"
+                        ></i>
+                      </div>
+
+                      <div class="col-10 mx-auto">
+                        <a
+                          href="./AssignmentEditor/assignmentEditor.html"
+                          class="fs-5"
+                          >A6 REACT</a
+                        >
+
+                        <br />
+
+                        <p class="text-muted">
+                          Week 5 React & Routing - Week Starting on Monday
+                          October 10th (10/10/2022) Module | Due Oct 23, 2022 at
+                          11.59pm | 100 pts
+                        </p>
+                      </div>
                     </li>
                   </div>
                 </ul>
