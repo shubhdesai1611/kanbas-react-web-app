@@ -1,0 +1,7 @@
+.show-arrow::after {
+  display: inline-block !important;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,30 @@
+.dashboard {
+  width: 100%;
+}
+
+div.card-layout.card {
+  margin: 20px 20px 20px 2px;
+}
+
+.list-group-item {
+  background-color: white;
+}
+
+.ellipsis-icon {
+  color: white;
+  float: right;
+  font-size: 22px;
+}
+
+.card-bottom-icon {
+  font-size: 22px;
+}
+
+.card-body {
+  padding-bottom: 0px !important;
+}
+
+div.card-footer {
+  background-color: white;
+  border: 0px;
+}

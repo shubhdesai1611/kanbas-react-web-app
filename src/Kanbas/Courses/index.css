@@ -1,0 +1,47 @@
+.breadcrum-item::before {
+  content: ">" !important;
+  padding-bottom: 2px;
+  color: #6c757d; /* Adjust color as needed */
+}
+
+.menu-icon {
+  margin-top: 8px;
+  margin-right: 30px;
+  font-size: 30px;
+}
+
+.breadcrum-items {
+  margin-top: 7px !important;
+  font-size: 23px !important;
+}
+
+.breadcrum-items.text-muted a {
+  text-decoration: none;
+  color: grey;
+}
+
+.breadcrum-items.text-danger a {
+  text-decoration: none;
+  color: red;
+}
+
+div.button.close-button {
+  color: white !important;
+  border: 1px solid white;
+}
+
+.menu-icon-course {
+  color: white;
+}
+
+.menu-icon-course:hover {
+  cursor: pointer;
+}
+
+.chevron-icon {
+  padding-top: 5px;
+}
+
+.chevron-icon:hover {
+  cursor: pointer;
+}

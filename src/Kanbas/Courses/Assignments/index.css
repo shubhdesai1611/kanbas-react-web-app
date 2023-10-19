@@ -1,0 +1,51 @@
+.assignment {
+  width: 100%;
+}
+
+div.list-group.assignments-lists {
+  width: 100% !important;
+  background-color: white;
+}
+
+div.list-group.assignments-lists a {
+  background-color: white;
+  color: black;
+}
+
+.assignment-button {
+  float: right;
+}
+
+.group-button {
+  float: right;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.assignment-icon {
+  font-size: 16px;
+  color: white;
+  font-weight: bolder;
+}
+
+.hr {
+  margin-top: 15px !important;
+}
+
+.search {
+  float: left;
+}
+
+.list-group-item.heading {
+  border-color: black;
+}
+
+.list-group-item.items {
+  border-left: 3px solid green;
+}
+
+.assignment-icon.ellipsis {
+  margin-top: -6px;
+}

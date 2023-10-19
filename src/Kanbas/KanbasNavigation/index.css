@@ -1,0 +1,57 @@
+/* React */
+
+.user-icon {
+  color: grey;
+  font-size: 30px;
+}
+
+.icon {
+  color: red;
+  font-size: 30px;
+}
+
+.text {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+a.list-group-item {
+  background-color: black;
+  color: white;
+  border-color: black;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 10px;
+}
+
+a.list-group-item.active {
+  background-color: white;
+  color: red;
+  border-color: black;
+}
+
+div.list-group.kanbas {
+  border-radius: 0%;
+  margin-right: 20px;
+  width: 85px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+img {
+  width: -webkit-fill-available;
+  background-color: black;
+}
+
+.list-group-item.logo {
+  background-color: black;
+  border: none;
+  padding-bottom: 10px;
+}
+
+img.neu-logo {
+  height: 58px;
+  width: 58px;
+}

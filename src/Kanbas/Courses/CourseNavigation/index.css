@@ -1,0 +1,20 @@
+a.list-group-item.course-navigation {
+  background-color: white;
+  color: red;
+  border: none;
+  font-size: 20px;
+  margin-left: 0px;
+  padding-left: 10px;
+  text-align: left;
+  border-radius: 0;
+}
+
+a.list-group-item.active.course-navigation {
+  background-color: white;
+  color: black;
+  border-left: 2px solid black;
+}
+
+div.list-group.main-div {
+  width: 190px;
+}
