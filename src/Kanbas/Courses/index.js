@@ -130,7 +130,7 @@ function Courses() {
           );
         })}
         <Button variant="secondary" className="mt-2 ms-auto">
-          <LuGlasses /> Student View
+          <LuGlasses className="mb-1" /> Student View
         </Button>
       </Breadcrumb>
       <hr className={`hr ${breadcrum_view}`} />
