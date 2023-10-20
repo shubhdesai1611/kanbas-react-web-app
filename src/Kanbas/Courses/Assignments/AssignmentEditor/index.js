@@ -52,10 +52,7 @@ function AssignmentEditor() {
         <div className="row">
           <div className="col">
             <button className="btn btn-light me-3 float-end">
-              <i
-                className="fa-solid fa-ellipsis-vertical"
-                // style="color: #050505"
-              ></i>
+              <i className="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <Dropdown className="float-end me-2">
               <Dropdown.Toggle variant="secondary" id="dropdown-basic">
@@ -63,7 +60,7 @@ function AssignmentEditor() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"></Dropdown.Item>
+                <Dropdown.Item href="#"></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <label className="text-success me-3 pt-1 fs-5 float-end">

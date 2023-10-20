@@ -34,16 +34,10 @@ function Assignments() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">
-                Edit Assignment Dates
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">
-                Assignment Groups Weight
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Gradescope</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                Commons Favourites 1.3
-              </Dropdown.Item>
+              <Dropdown.Item href="#">Edit Assignment Dates</Dropdown.Item>
+              <Dropdown.Item href="#">Assignment Groups Weight</Dropdown.Item>
+              <Dropdown.Item href="#">Gradescope</Dropdown.Item>
+              <Dropdown.Item href="#">Commons Favourites 1.3</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <button
@@ -75,16 +69,10 @@ function Assignments() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">
-                  Edit Assignment Dates
-                </Dropdown.Item>
-                <Dropdown.Item href="#/action-2">
-                  Assignment Groups Weight
-                </Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Gradescope</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">
-                  Commons Favourites 1.3
-                </Dropdown.Item>
+                <Dropdown.Item href="#">Edit Assignment Dates</Dropdown.Item>
+                <Dropdown.Item href="#">Assignment Groups Weight</Dropdown.Item>
+                <Dropdown.Item href="#">Gradescope</Dropdown.Item>
+                <Dropdown.Item href="#">Commons Favourites 1.3</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <div class="float-end ms-2">
@@ -106,23 +94,20 @@ function Assignments() {
             <span className="mt-1 fs-5 float-start ms-5">
               {assignment.title}
             </span>
-            {/* <FaEllipsisVertical className="float-end fs-5 mt-2" /> */}
             <Dropdown className="float-end me-2">
               <Dropdown.Toggle variant="" id="dropdown-basic">
                 <FaEllipsisVertical />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Speed Grader</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Duplicate</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Delete</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Move To</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Send To</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Copy To</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">
-                  Share to Commons
-                </Dropdown.Item>
+                <Dropdown.Item href="#">Edit</Dropdown.Item>
+                <Dropdown.Item href="#">Speed Grader</Dropdown.Item>
+                <Dropdown.Item href="#">Duplicate</Dropdown.Item>
+                <Dropdown.Item href="#">Delete</Dropdown.Item>
+                <Dropdown.Item href="#">Move To</Dropdown.Item>
+                <Dropdown.Item href="#">Send To</Dropdown.Item>
+                <Dropdown.Item href="#">Copy To</Dropdown.Item>
+                <Dropdown.Item href="#">Share to Commons</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <IoMdCheckmarkCircle className="float-end fs-5 mt-2 me-2 text-success" />
