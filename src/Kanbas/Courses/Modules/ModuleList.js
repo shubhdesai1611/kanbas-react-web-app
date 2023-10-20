@@ -6,6 +6,7 @@ import { LuGripVertical } from "react-icons/lu";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
 import { HiMiniEllipsisVertical } from "react-icons/hi2";
 import { BiPlus } from "react-icons/bi";
+import { BiLink } from "react-icons/bi";
 
 function ModuleList() {
   const { courseId } = useParams();
@@ -15,7 +16,7 @@ function ModuleList() {
       {modules
         .filter((module) => module.course === courseId)
         .map((module, index) => (
-          <ul className="list-group mb-2 border-radius-0">
+          <ul className="list-group mb-5 border-radius-0">
             <li
               key={index}
               className="list-group-item items-list pt-0 pb-0 list-group-item-secondary"
@@ -54,7 +55,17 @@ function ModuleList() {
                         className="list-group-item d-flex mb-0 border-start-0 border-end-0 ps-0 me-0 pe-0"
                       >
                         <LuGripVertical className="fs-5 mt-auto mb-auto me-4" />
-                        <div dangerouslySetInnerHTML={{ __html: value }} />
+                        {key !== "Slides" ? (
+                          <div dangerouslySetInnerHTML={{ __html: value }} />
+                        ) : (
+                          <a
+                            href={`/Kanbas/Courses/${courseId}/Home`}
+                            className="text-decoration-none text-danger"
+                          >
+                            <BiLink className="fs-5" />
+                            {value}
+                          </a>
+                        )}
                         <IoCheckmarkCircleSharp className="ms-auto my-auto text-success fs-5" />
                         <HiMiniEllipsisVertical className="ms-2 my-auto fs-5" />
                       </span>

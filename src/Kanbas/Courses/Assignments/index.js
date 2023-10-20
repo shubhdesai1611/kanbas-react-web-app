@@ -61,17 +61,17 @@ function Assignments() {
         <hr className="hr" />
       </div>
       <div className="list-group assignments-lists">
-        <li className="list-group-item heading bg-secondary ps-1">
+        <li className="list-group-item heading list-group-item-secondary ps-1">
           <h4>
             <FaGripVertical className="float-start grip mt-2 me-4" />
             <span>Assignments for course {courseId}</span>
             <Dropdown className="float-end ms-1">
               <Dropdown.Toggle
-                variant="secondary"
+                variant=""
                 id="dropdown-basic"
                 className="toggle"
               >
-                <FaEllipsisVertical className="assignment-icon ellipsis" />
+                <FaEllipsisVertical className="assignment-icon ellipsis text-dark" />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>

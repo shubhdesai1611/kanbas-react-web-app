@@ -1,10 +1,12 @@
 import db from "../../Database";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Button, Dropdown } from "react-bootstrap";
 import { FaGear } from "react-icons/fa6";
 import { IoExitOutline } from "react-icons/io5";
 import { LiaFileImportSolid } from "react-icons/lia";
 import { FiFilter } from "react-icons/fi";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import "./index.css";
 function Grades() {
   const { courseId } = useParams();
@@ -14,6 +16,47 @@ function Grades() {
   const enrollments = db.enrollments.filter(
     (enrollment) => enrollment.course === courseId
   );
+
+  const initialGrades = db.grades.reduce((acc, grade) => {
+    return {
+      ...acc,
+      [`${grade.student}:${grade.assignment}`]: grade.grade,
+    };
+  }, {});
+
+  const [grades, setGrades] = useState(initialGrades);
+
+  const handleGradeChange = (studentId, assignmentId, newValue) => {
+    setGrades((prevGrades) => {
+      return {
+        ...prevGrades,
+        [`${studentId}:${assignmentId}`]: newValue,
+      };
+    });
+  };
+
+  const initialEdits = db.grades.reduce((acc, grade) => {
+    return {
+      ...acc,
+      [`${grade.student}:${grade.assignment}`]: false,
+    };
+  }, {});
+
+  const [isEditable, setEditable] = useState(initialEdits);
+
+  const handleIsEditable = (studentId, assignmentId) => {
+    console.log(studentId);
+    setEditable((prevEdits) => {
+      return {
+        ...prevEdits,
+        [`${studentId}:${assignmentId}`]:
+          !prevEdits[`${studentId}:${assignmentId}`],
+      };
+    });
+  };
+
+  console.log(isEditable);
+
   return (
     <div>
       <div className="d-flex mb-5">
@@ -113,12 +156,42 @@ function Grades() {
                     {user.firstName} {user.lastName}
                   </td>
                   {assignments.map((assignment) => {
-                    const grade = db.grades.find(
-                      (grade) =>
-                        grade.student === enrollment.user &&
-                        grade.assignment === assignment._id
+                    return (
+                      <td>
+                        <span>
+                          {isEditable[
+                            `${enrollment.user}:${assignment._id}`
+                          ] ? (
+                            <input
+                              type="number"
+                              value={
+                                grades[`${enrollment.user}:${assignment._id}`]
+                              }
+                              onChange={(e) =>
+                                handleGradeChange(
+                                  enrollment.user,
+                                  assignment._id,
+                                  e.target.value
+                                )
+                              }
+                            />
+                          ) : (
+                            grades[`${enrollment.user}:${assignment._id}`]
+                          )}
+                        </span>
+                        <span>
+                          <Button
+                            variant=""
+                            className="mb-2"
+                            onClick={() =>
+                              handleIsEditable(enrollment.user, assignment._id)
+                            }
+                          >
+                            <BsFillArrowRightCircleFill className="fs-5" />
+                          </Button>
+                        </span>
+                      </td>
                     );
-                    return <td>{grade?.grade || ""}</td>;
                   })}
                 </tr>
               );
