@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import db from "../../Database";
 import "./index.css";
@@ -8,13 +8,54 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { FaGripVertical } from "react-icons/fa6";
 import { FiEdit } from "react-icons/fi";
 import { IoMdCheckmarkCircle } from "react-icons/io";
+import { useSelector, useDispatch } from "react-redux";
+import { Button } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import { deleteAssignment } from "./assignReducer";
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Confirmation
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>Are you sure you want to remove the assignment?</p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button
+          onClick={() => {
+            props.delete();
+            props.onHide();
+          }}
+        >
+          Yes
+        </Button>
+        <Button onClick={props.onHide}>No</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignments = db.assignments;
+  const assignments = useSelector((state) => state.assignReducer.assignments);
+  const assignment = useSelector((state) => state.assignReducer.assignment);
+  const dispatch = useDispatch();
   const courseAssignments = assignments.filter(
     (assignment) => assignment.course === courseId
   );
+
+  const [modalShow, setModalShow] = React.useState(false);
+  const [assignmentDelete, setAssignmentDelete] = useState();
+
   return (
     <div className="assignment">
       <div className="row mb-1">
@@ -40,13 +81,18 @@ function Assignments() {
               <Dropdown.Item href="#">Commons Favourites 1.3</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <button
-            type="button"
-            className="btn btn-danger assignment-button ms-1"
+          <Link
+            to={`/Kanbas/Courses/${courseId}/Assignments/NewAssignment`}
+            className=""
           >
-            <AiOutlinePlus />
-            Assignment
-          </button>
+            <button
+              type="button"
+              className="btn btn-danger assignment-button ms-1"
+            >
+              <AiOutlinePlus />
+              Assignment
+            </button>
+          </Link>
           <button type="button" className="group-button btn btn-secondary">
             <AiOutlinePlus />
             Group
@@ -84,34 +130,52 @@ function Assignments() {
           </h4>
         </li>
         {courseAssignments.map((assignment) => (
-          <Link
-            key={assignment._id}
-            to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-            className="list-group-item items"
-          >
-            <FaGripVertical className="float-start grip mt-2 me-4 ps-2 grip-for-assignment-names fs-5" />
-            <FiEdit className="float-start fs-5 mt-2 text-success" />
-            <span className="mt-1 fs-5 float-start ms-5">
-              {assignment.title}
-            </span>
-            <Dropdown className="float-end me-2">
-              <Dropdown.Toggle variant="" id="dropdown-basic">
-                <FaEllipsisVertical />
-              </Dropdown.Toggle>
+          <span className="d-flex w-100 border-end border-1 border-bottom border-1 border-dark">
+            <Link
+              key={assignment._id}
+              to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+              className="list-group-item items col-11"
+            >
+              <FaGripVertical className="float-start grip mt-2 me-4 ps-2 grip-for-assignment-names fs-5" />
+              <FiEdit className="float-start fs-5 mt-2 text-success" />
+              <span className="mt-1 fs-5 float-start ms-5">
+                {assignment.title}
+              </span>
+              <Dropdown className="float-end me-2">
+                <Dropdown.Toggle variant="" id="dropdown-basic">
+                  <FaEllipsisVertical />
+                </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#">Edit</Dropdown.Item>
-                <Dropdown.Item href="#">Speed Grader</Dropdown.Item>
-                <Dropdown.Item href="#">Duplicate</Dropdown.Item>
-                <Dropdown.Item href="#">Delete</Dropdown.Item>
-                <Dropdown.Item href="#">Move To</Dropdown.Item>
-                <Dropdown.Item href="#">Send To</Dropdown.Item>
-                <Dropdown.Item href="#">Copy To</Dropdown.Item>
-                <Dropdown.Item href="#">Share to Commons</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <IoMdCheckmarkCircle className="float-end fs-5 mt-2 me-2 text-success" />
-          </Link>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#">Edit</Dropdown.Item>
+                  <Dropdown.Item href="#">Speed Grader</Dropdown.Item>
+                  <Dropdown.Item href="#">Duplicate</Dropdown.Item>
+                  <Dropdown.Item href="#">Delete</Dropdown.Item>
+                  <Dropdown.Item href="#">Move To</Dropdown.Item>
+                  <Dropdown.Item href="#">Send To</Dropdown.Item>
+                  <Dropdown.Item href="#">Copy To</Dropdown.Item>
+                  <Dropdown.Item href="#">Share to Commons</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              <IoMdCheckmarkCircle className="float-end fs-5 mt-2 me-2 text-success" />
+            </Link>
+            <span className="my-auto">
+              <Button
+                className="btn btn-danger"
+                onClick={() => {
+                  setModalShow(true);
+                  setAssignmentDelete(assignment._id);
+                }}
+              >
+                Delete
+              </Button>
+            </span>
+            <MyVerticallyCenteredModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              delete={() => dispatch(deleteAssignment(assignmentDelete))}
+            />
+          </span>
         ))}
       </div>
     </div>

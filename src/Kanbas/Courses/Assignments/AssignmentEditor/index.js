@@ -1,44 +1,133 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import db from "../../../Database";
 import { Link } from "react-router-dom";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { FaEllipsisVertical } from "react-icons/fa6";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+} from "../assignReducer";
 
 function AssignmentEditor() {
+  const { courseId } = useParams();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { assignmentId } = useParams();
-  const assignment = db.assignments.find(
-    (assignment) => assignment._id === assignmentId
+
+  const assignments = useSelector((state) => state.assignReducer.assignments);
+
+  const newAssignment = useSelector((state) => state.assignReducer.assignment);
+
+  const maxAssignmentId = Math.max(
+    ...assignments
+      .filter((assignment) => assignment.course === courseId)
+      .map((assignment) => parseInt(assignment._id.slice(1), 10))
   );
 
-  const { courseId } = useParams();
-  const navigate = useNavigate();
-  const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-  };
+  let assignment =
+    assignmentId === "NewAssignment"
+      ? newAssignment
+      : assignments.find((assignment) => assignment._id === assignmentId);
 
   const [AssignmentTitle, setAssignmentTitle] = useState(`${assignment.title}`);
-  const [dueDate, setDueDate] = useState("2021-01-01");
-  const [availableFrom, setAvailableFrom] = useState("2021-01-01");
-  const [until, setUntil] = useState("2021-01-01");
+  const [AssignmentDescription, setAssignmentDescription] = useState(
+    `${assignment.description}`
+  );
+  const [dueDate, setDueDate] = useState(`${assignment.dueDate}`);
+  const [availableFrom, setAvailableFrom] = useState(
+    `${assignment.availableFrom}`
+  );
+  const [until, setUntil] = useState(`${assignment.until}`);
+  const [points, setPoints] = useState(`${assignment.points}`);
+
+  const reset = {
+    _id: "A1011111",
+    title: "NewAssignment",
+    description: "New Assignment Description",
+    course: "CS101",
+    points: 100,
+    dueDate: "2021-01-01",
+    availableFrom: "2021-01-01",
+    until: "2021-01-01",
+  };
+
+  const handleSave = () => {
+    console.log("Actually saving assignment TBD in later assignments");
+
+    if (assignmentId === "NewAssignment") {
+      const newAssignmentId = maxAssignmentId + 1;
+      dispatch(
+        addAssignment({
+          ...assignment,
+          course: courseId,
+          _id: `A${newAssignmentId}`,
+        })
+      );
+    } else {
+      dispatch(
+        updateAssignment({
+          ...assignment,
+          title: AssignmentTitle,
+          description: AssignmentDescription,
+          until: until,
+          availableFrom: availableFrom,
+          dueDate: dueDate,
+          points: points,
+        })
+      );
+    }
+    dispatch(setAssignment(reset));
+    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  };
 
   const handleInputChange = (e) => {
     setAssignmentTitle(e.target.value);
   };
 
+  useEffect(() => {
+    dispatch(setAssignment({ ...assignment, title: AssignmentTitle }));
+  }, [AssignmentTitle]);
+
+  const handleDescriptionChange = (e) => {
+    setAssignmentDescription(e.target.value);
+  };
+  useEffect(() => {
+    dispatch(
+      setAssignment({ ...assignment, description: AssignmentDescription })
+    );
+  }, [AssignmentDescription]);
+
   const handleDueDateChange = (e) => {
     setDueDate(e.target.value);
   };
+  useEffect(() => {
+    dispatch(setAssignment({ ...assignment, dueDate: dueDate }));
+  }, [dueDate]);
 
   const handleAvailableFromChange = (e) => {
     setAvailableFrom(e.target.value);
   };
+  useEffect(() => {
+    dispatch(setAssignment({ ...assignment, availableFrom: availableFrom }));
+  }, [availableFrom]);
 
   const handleUntilChange = (e) => {
     setUntil(e.target.value);
   };
+  useEffect(() => {
+    dispatch(setAssignment({ ...assignment, until: until }));
+  }, [until]);
+
+  const handlePoints = (e) => {
+    setPoints(e.target.value);
+  };
+  useEffect(() => {
+    dispatch(setAssignment({ ...assignment, points: points }));
+  }, [points]);
 
   const inputRef = useRef();
 
@@ -71,22 +160,23 @@ function AssignmentEditor() {
         </div>
       </div>
       <hr />
-      <div class="row mt-5">
-        <label class="ps-0" for="assignment_name">
+      <div className="row mt-5">
+        <label className="ps-0" for="assignment_name">
           Assignment Name
         </label>
         <input
           type="text"
           name="assignment_name"
           id="assignment_name"
-          class="form-control w-50"
+          className="form-control w-50"
           value={AssignmentTitle}
+          placeholder="New Assignment"
           onChange={handleInputChange}
         />
       </div>
 
-      <div class="row mt-5">
-        <label class="ps-0" for="assignment_name">
+      <div className="row mt-5">
+        <label className="ps-0" for="assignment_name">
           Assignment Description
         </label>
         <textarea
@@ -94,40 +184,45 @@ function AssignmentEditor() {
           id="description"
           cols="30"
           rows="10"
-          class="form-control w-50"
+          className="form-control w-50"
+          onChange={handleDescriptionChange}
         >
-          Assignment Description
+          {AssignmentDescription}
         </textarea>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end" for="points">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label className="form-label float-end" for="points">
             Points
           </label>
         </div>
-        <div class="col-4">
+        <div className="col-4">
           <input
             type="number"
             id="points"
             min="0"
             max="100"
-            placeholder="100"
-            class="form-control"
+            value={points}
+            className="form-control"
+            onChange={handlePoints}
           />
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end text-end" for="assignment-group">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label
+            className="form-label float-end text-end"
+            for="assignment-group"
+          >
             Assignment Group
           </label>
         </div>
-        <div class="col-4">
+        <div className="col-4">
           <select
             id="assignment-group"
-            class="form-select"
+            className="form-select"
             aria-label="Default select example"
           >
             <option value="ASSIGNMENTS" selected>
@@ -137,16 +232,16 @@ function AssignmentEditor() {
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end" for="grade-display">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label className="form-label float-end" for="grade-display">
             Display Grade as
           </label>
         </div>
-        <div class="col-4">
+        <div className="col-4">
           <select
             id="grade-display"
-            class="form-select"
+            className="form-select"
             aria-label="Default select example"
           >
             <option value="Percentage" selected>
@@ -156,16 +251,16 @@ function AssignmentEditor() {
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end" for="submission-type">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label className="form-label float-end" for="submission-type">
             Submission Type
           </label>
         </div>
-        <div class="col-4 border border-secondary">
+        <div className="col-4 border border-secondary">
           <select
             id="submission-type"
-            class="form-select mt-3 w-75"
+            className="form-select mt-3 w-75"
             aria-label="Default select example"
           >
             <option value="submission-type" selected>
@@ -175,43 +270,44 @@ function AssignmentEditor() {
           </select>
           <br />
           <h5>Online Entry options</h5>
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" /> Text Entry
+          <label className="form-check-label">
+            <input className="form-check-input" type="checkbox" /> Text Entry
           </label>
           <br />
-          <label class="mt-3 form-check-label">
-            <input class="form-check-input" type="checkbox" /> Website URL
+          <label className="mt-3 form-check-label">
+            <input className="form-check-input" type="checkbox" /> Website URL
           </label>
           <br />
-          <label class="mt-3 form-check-label">
-            <input class="form-check-input" type="checkbox" /> Media Recordings
+          <label className="mt-3 form-check-label">
+            <input className="form-check-input" type="checkbox" /> Media
+            Recordings
           </label>
           <br />
-          <label class="mt-3 form-check-label">
-            <input class="form-check-input" type="checkbox" /> Student
+          <label className="mt-3 form-check-label">
+            <input className="form-check-input" type="checkbox" /> Student
             Annotation
           </label>
           <br />
-          <label class="mt-3 mb-3 form-check-label">
-            <input class="form-check-input" type="checkbox" /> File Uploads
+          <label className="mt-3 mb-3 form-check-label">
+            <input className="form-check-input" type="checkbox" /> File Uploads
           </label>
           <br />
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
+      <div className="row mt-5">
+        <div className="col-2">
           <label
-            class="form-label float-end text-end"
+            className="form-label float-end text-end"
             for="submission-attempts"
           >
             Submission Attempts
           </label>
         </div>
-        <div class="col-4">
+        <div className="col-4">
           <select
             id="submission-attempts"
-            class="form-select"
+            className="form-select"
             aria-label="Default select example"
           >
             <option value="Submission Attempts" selected>
@@ -221,16 +317,16 @@ function AssignmentEditor() {
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end" for="plagiarism-review">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label className="form-label float-end" for="plagiarism-review">
             Plagiarism Review
           </label>
         </div>
-        <div class="col-4">
+        <div className="col-4">
           <select
             id="plagiarism-review"
-            class="form-select"
+            className="form-select"
             aria-label="Default select example"
           >
             <option value="plagiarism-review" selected>
@@ -240,49 +336,52 @@ function AssignmentEditor() {
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end text-end" for="Group Assignment">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label
+            className="form-label float-end text-end"
+            for="Group Assignment"
+          >
             Group Assignment
           </label>
         </div>
-        <div class="col-4">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" /> This is a group
-            assignment
+        <div className="col-4">
+          <label className="form-check-label">
+            <input className="form-check-input" type="checkbox" /> This is a
+            group assignment
           </label>
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end" for="Peer Reviews">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label className="form-label float-end" for="Peer Reviews">
             Peer Reviews
           </label>
         </div>
-        <div class="col-4">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" /> Require Peer
+        <div className="col-4">
+          <label className="form-check-label">
+            <input className="form-check-input" type="checkbox" /> Require Peer
             Reviews
           </label>
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-2">
-          <label class="form-label float-end" for="Assign">
+      <div className="row mt-5">
+        <div className="col-2">
+          <label className="form-label float-end" for="Assign">
             Assign
           </label>
         </div>
-        <div class="col-10">
-          <div class="row border border-1 w-50">
-            <div class="col-12">
-              <label class="form-label mt-3">
+        <div className="col-10">
+          <div className="row border border-1 w-50">
+            <div className="col-12">
+              <label className="form-label mt-3">
                 <h4>Assign to</h4>{" "}
               </label>
               <select
                 id="AssignTo"
-                class="form-select"
+                className="form-select"
                 aria-label="Default select example"
               >
                 <option value="Everyone" selected>
@@ -291,12 +390,12 @@ function AssignmentEditor() {
               </select>
             </div>
 
-            <div class="col-12">
-              <label class="form-label" for="Due">
+            <div className="col-12">
+              <label className="form-label" for="Due">
                 Due
               </label>
               <input
-                class="form-control"
+                className="form-control"
                 id="Due"
                 type="date"
                 value={dueDate}
@@ -304,12 +403,12 @@ function AssignmentEditor() {
               />
             </div>
 
-            <div class="col-6 pe-0 mt-3">
-              <label class="form-label" for="available-from">
+            <div className="col-6 pe-0 mt-3">
+              <label className="form-label" for="available-from">
                 Available from
               </label>
               <input
-                class="form-control"
+                className="form-control"
                 id="available-from"
                 type="date"
                 value={availableFrom}
@@ -317,12 +416,12 @@ function AssignmentEditor() {
               />
             </div>
 
-            <div class="col-6 ps-1 mt-3">
-              <label class="form-label" for="until">
+            <div className="col-6 ps-1 mt-3">
+              <label className="form-label" for="until">
                 Until
               </label>
               <input
-                class="form-control"
+                className="form-control"
                 id="until"
                 type="date"
                 value={until}
@@ -330,9 +429,9 @@ function AssignmentEditor() {
               />
             </div>
 
-            <div class="col-12 pe-0 ps-0 mt-4">
-              <button class="btn btn-secondary w-100">
-                <i class="fa-solid fa-plus"></i>
+            <div className="col-12 pe-0 ps-0 mt-4">
+              <button className="btn btn-secondary w-100">
+                <i className="fa-solid fa-plus"></i>
                 Add
               </button>
             </div>
@@ -342,13 +441,13 @@ function AssignmentEditor() {
 
       <hr />
 
-      <div class="row mt-2">
-        <div class="col-12">
+      <div className="row mt-2">
+        <div className="col-12">
           <label>
             <input
               type="checkbox"
               name="notify"
-              class="form-check-input me-2"
+              className="form-check-input me-2"
             />
             Notify users that this content has changed
           </label>
@@ -361,6 +460,9 @@ function AssignmentEditor() {
           <Link
             to={`/Kanbas/Courses/${courseId}/Assignments`}
             className="btn btn-secondary float-end"
+            onClick={() => {
+              dispatch(setAssignment(reset));
+            }}
           >
             Cancel
           </Link>

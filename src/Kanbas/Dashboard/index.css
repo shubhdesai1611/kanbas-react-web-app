@@ -1,5 +1,6 @@
 .dashboard {
   width: 100%;
+  position: absolute;
 }
 
 div.card-layout.card {
@@ -8,6 +9,11 @@ div.card-layout.card {
 
 .list-group-item {
   background-color: white;
+}
+
+a.list-group-item.dashboard-item {
+  background-color: white;
+  color: black;
 }
 
 .ellipsis-icon {
@@ -27,4 +33,9 @@ div.card-layout.card {
 div.card-footer {
   background-color: white;
   border: 0px;
+}
+
+.editForm {
+  z-index: 999;
+  position: relative;
 }

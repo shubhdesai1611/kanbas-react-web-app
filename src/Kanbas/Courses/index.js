@@ -25,15 +25,19 @@ import { LuGlasses } from "react-icons/lu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineDown } from "react-icons/ai";
 import CloseButton from "react-bootstrap/CloseButton";
+import { useSelector } from "react-redux";
 
-function Courses() {
+function Courses({ courses }) {
   const { courseId } = useParams();
   const { pathname } = useLocation();
   const path = pathname.split("/");
   let lastPage;
   let navigate = useNavigate();
 
-  const course = db.courses.find((course) => course._id === courseId);
+  const course = courses.find((course) => course._id === courseId);
+  console.log("In Course:", course);
+  console.log("In CourseId:", courseId);
+  console.log("In Courses:", courses);
 
   const clickingMenu = () => {
     navigate(`/Kanbas/Courses/${course._id}/SimpleKanbas`);
@@ -71,6 +75,10 @@ function Courses() {
 
     setSimpleCourseNavigationBreadcrum(newsimpleCourseNavigationBreadcrumView);
   }, [pathname]);
+
+  const reducerAssignments = useSelector(
+    (state) => state.assignReducer.assignments
+  );
 
   return (
     <div>
@@ -118,6 +126,11 @@ function Courses() {
               : "";
 
           lastPage = link === "" ? "text-muted" : "text-danger";
+
+          const isAssignment = reducerAssignments.find(
+            (assignment) => assignment._id === page
+          );
+          page = isAssignment ? isAssignment.title : page;
 
           return (
             <Breadcrumb.Item

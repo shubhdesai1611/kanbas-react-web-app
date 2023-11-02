@@ -43,6 +43,7 @@ div.list-group.assignments-lists a {
 }
 
 .list-group-item.items {
+  border: 0px;
   border-left: 3px solid green;
 }
 
