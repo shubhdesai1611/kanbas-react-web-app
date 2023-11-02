@@ -58,7 +58,10 @@ function AssignmentEditor() {
   const handleSave = () => {
     console.log("Actually saving assignment TBD in later assignments");
 
-    if (assignmentId === "NewAssignment") {
+    if (AssignmentTitle.trim() === "") {
+      alert("Please enter assignment name");
+      return;
+    } else if (assignmentId === "NewAssignment") {
       const newAssignmentId = maxAssignmentId + 1;
       dispatch(
         addAssignment({

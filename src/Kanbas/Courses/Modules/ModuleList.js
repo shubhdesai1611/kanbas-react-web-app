@@ -55,7 +55,13 @@ function ModuleList() {
 
           <Button
             className="btn btn-success ms-2"
-            onClick={() => dispatch(addModule({ ...module, course: courseId }))}
+            onClick={() => {
+              if (module.name.trim() === "") {
+                alert("Please enter module name");
+              } else {
+                dispatch(addModule({ ...module, course: courseId }));
+              }
+            }}
           >
             Add
           </Button>

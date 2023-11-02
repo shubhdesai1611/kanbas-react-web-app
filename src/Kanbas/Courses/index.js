@@ -35,9 +35,6 @@ function Courses({ courses }) {
   let navigate = useNavigate();
 
   const course = courses.find((course) => course._id === courseId);
-  console.log("In Course:", course);
-  console.log("In CourseId:", courseId);
-  console.log("In Courses:", courses);
 
   const clickingMenu = () => {
     navigate(`/Kanbas/Courses/${course._id}/SimpleKanbas`);

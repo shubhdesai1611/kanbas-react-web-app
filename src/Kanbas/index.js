@@ -27,15 +27,9 @@ function Kanbas() {
         ...courses,
         { ...course, _id: new Date().getTime().toString() },
       ]);
-      console.log(course);
       setNewCourse("");
     }
   };
-
-  useEffect(() => {
-    console.log("Course:", course);
-    console.log("Courses:", courses);
-  }, [courses]);
 
   const deleteCourse = (courseId) => {
     setCourses(courses.filter((course) => course._id !== courseId));
