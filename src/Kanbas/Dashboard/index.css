@@ -1,6 +1,5 @@
 .dashboard {
   width: 100%;
-  position: absolute;
 }
 
 div.card-layout.card {
@@ -37,5 +36,4 @@ div.card-footer {
 
 .editForm {
   z-index: 999;
-  position: relative;
 }

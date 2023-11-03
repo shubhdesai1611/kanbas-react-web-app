@@ -77,7 +77,6 @@ function Dashboard({
               </div>
             </div>
             <div className="list-group w-50 mt-2 border border-1">
-              {/* {editingCourse && <CourseEditForm style={{ zIndex: 10 }} />} */}
               {courses.map((course) => (
                 <div className="d-flex border border-1">
                   <Link
