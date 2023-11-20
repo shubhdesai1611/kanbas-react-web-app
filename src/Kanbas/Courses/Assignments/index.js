@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import db from "../../Database";
 import "./index.css";
@@ -11,7 +11,8 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
-import { deleteAssignment } from "./assignReducer";
+import { deleteAssignment, setAssignments } from "./assignReducer";
+import * as client from "./services.js";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -52,6 +53,12 @@ function Assignments() {
   const courseAssignments = assignments.filter(
     (assignment) => assignment.course === courseId
   );
+
+  useEffect(() => {
+    client
+      .findAssignmentsForCourse(courseId)
+      .then((assignments) => dispatch(setAssignments(assignments)));
+  }, [courseId]);
 
   const [modalShow, setModalShow] = React.useState(false);
   const [assignmentDelete, setAssignmentDelete] = useState();
@@ -173,7 +180,11 @@ function Assignments() {
             <MyVerticallyCenteredModal
               show={modalShow}
               onHide={() => setModalShow(false)}
-              delete={() => dispatch(deleteAssignment(assignmentDelete))}
+              delete={() =>
+                client.deleteAssignment(assignmentDelete).then((status) => {
+                  dispatch(deleteAssignment(assignmentDelete));
+                })
+              }
             />
           </span>
         ))}

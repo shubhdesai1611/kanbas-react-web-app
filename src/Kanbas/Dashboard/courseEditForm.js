@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import axios from "axios";
 
 function CourseEditForm({ selectedCourse, setEditing, editCourse }) {
+  const URL = "http://localhost:4000/api/courses";
   const [editedCourse, setEditedCourse] = useState({ ...selectedCourse });
 
   const handleInputChange = (e) => {
@@ -9,10 +11,14 @@ function CourseEditForm({ selectedCourse, setEditing, editCourse }) {
     setEditedCourse({ ...editedCourse, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     editCourse(editedCourse);
     setEditing(false);
+    const response = await axios.put(
+      `${URL}/${editedCourse._id}`,
+      editedCourse
+    );
   };
 
   const handleCancel = () => {

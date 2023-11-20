@@ -26,6 +26,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineDown } from "react-icons/ai";
 import CloseButton from "react-bootstrap/CloseButton";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 function Courses({ courses }) {
   const { courseId } = useParams();
@@ -34,7 +35,18 @@ function Courses({ courses }) {
   let lastPage;
   let navigate = useNavigate();
 
-  const course = courses.find((course) => course._id === courseId);
+  const URL = "http://localhost:4000/api/courses";
+
+  const [course, setCourse] = useState({});
+  //const course = courses.find((course) => course._id === courseId);
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  };
+
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
 
   const clickingMenu = () => {
     navigate(`/Kanbas/Courses/${course._id}/SimpleKanbas`);

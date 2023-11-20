@@ -11,6 +11,7 @@ import {
   updateAssignment,
   setAssignment,
 } from "../assignReducer";
+import * as client from "../services.js";
 
 function AssignmentEditor() {
   const { courseId } = useParams();
@@ -55,7 +56,7 @@ function AssignmentEditor() {
     until: "2021-01-01",
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     console.log("Actually saving assignment TBD in later assignments");
 
     if (AssignmentTitle.trim() === "") {
@@ -63,25 +64,29 @@ function AssignmentEditor() {
       return;
     } else if (assignmentId === "NewAssignment") {
       const newAssignmentId = maxAssignmentId + 1;
-      dispatch(
-        addAssignment({
-          ...assignment,
-          course: courseId,
-          _id: `A${newAssignmentId}`,
-        })
-      );
+      const assignmentToBeAdded = {
+        ...assignment,
+        course: courseId,
+        _id: `A${newAssignmentId}`,
+      };
+
+      client
+        .createAssignment(courseId, assignmentToBeAdded)
+        .then((assignmentToBeAdded) => {
+          dispatch(addAssignment(assignmentToBeAdded));
+        });
     } else {
-      dispatch(
-        updateAssignment({
-          ...assignment,
-          title: AssignmentTitle,
-          description: AssignmentDescription,
-          until: until,
-          availableFrom: availableFrom,
-          dueDate: dueDate,
-          points: points,
-        })
-      );
+      const updatedAssignment = {
+        ...assignment,
+        title: AssignmentTitle,
+        description: AssignmentDescription,
+        until: until,
+        availableFrom: availableFrom,
+        dueDate: dueDate,
+        points: points,
+      };
+      const status = await client.updateAssignment(updatedAssignment);
+      dispatch(updateAssignment(updatedAssignment));
     }
     dispatch(setAssignment(reset));
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
