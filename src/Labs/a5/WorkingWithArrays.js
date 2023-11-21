@@ -103,6 +103,7 @@ function WorkingWithArrays() {
           }
           className="form-check-input mb-2"
           type="checkbox"
+          checked={todo.completed}
         />
         Completed
       </label>
@@ -122,6 +123,7 @@ function WorkingWithArrays() {
         value={todo.description}
         type="text"
       />
+      <br />
       <input
         onChange={(e) =>
           setTodo({
@@ -132,8 +134,9 @@ function WorkingWithArrays() {
         value={todo.due}
         type="date"
       />
-      <label>
+      <label className="w-100">
         <input
+          className="form-check-input"
           onChange={(e) =>
             setTodo({
               ...todo,
@@ -142,11 +145,16 @@ function WorkingWithArrays() {
           }
           value={todo.completed}
           type="checkbox"
+          checked={todo.completed}
         />
         Completed
       </label>
-      <button onClick={postTodo}>Post Todo</button>
-      <button onClick={updateTodo}>Update Todo</button>
+      <button className="btn btn-secondary w-100 mb-2" onClick={postTodo}>
+        Post Todo
+      </button>
+      <button className="btn btn-warning w-100 mb-2" onClick={updateTodo}>
+        Update Todo
+      </button>
 
       <button onClick={createTodo} className="btn btn-primary mb-2 w-100">
         Create Todo
