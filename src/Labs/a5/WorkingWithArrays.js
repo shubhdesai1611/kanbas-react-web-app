@@ -227,7 +227,7 @@ function WorkingWithArrays() {
         href={`${API}/${todo.id}/completed/${todo.completed}`}
         className="btn btn-primary me-2"
       >
-        {`Update Completed to ${todo.completed}`}
+        {`Update Completed to ${false}`}
       </a>
       <a
         href={`${API}/${todo.id}/description/${todo.description}`}
