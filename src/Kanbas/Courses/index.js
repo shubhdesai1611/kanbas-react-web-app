@@ -35,7 +35,8 @@ function Courses({ courses }) {
   let lastPage;
   let navigate = useNavigate();
 
-  const URL = "http://localhost:4000/api/courses";
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  const URL = `${API_BASE}/courses`;
 
   const [course, setCourse] = useState({});
   //const course = courses.find((course) => course._id === courseId);
